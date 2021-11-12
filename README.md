@@ -11,7 +11,7 @@ this package, when you run into trouble with the official one. You can use both 
 
 * You need to be familiar with the [API reference](https://docs.unzer.com/reference/api/)
 
-* Functions do not validate/check data passed to them , you should know what you are doing.
+* Functions do not validate/check data passed to them, you should know what you are doing.
 
 * The package offers only functions for stuff I need.
 
@@ -31,7 +31,7 @@ In general you set up a *Unzer* instance with your private sandbox or production
 then you pass that instance to one of the function modules:
 
 ```js
-const {Unzer, Baskets, Customers} = require('../index');
+const {Unzer, Baskets, Customers} = require('unzer-node-simple');
 
 const unzer = new Unzer('<your-private-key-here>');
 
@@ -47,12 +47,12 @@ and/or URL routes. For example:
 
 Also the methods in the function modules are direct representations of the
 REST API methods given in the reference. For example for
-(https://docs.unzer.com/reference/api/#get-/v1/paypage/{id})[https://docs.unzer.com/reference/api/#get-/v1/paypage/{id}]
+[https://docs.unzer.com/reference/api/#get-/v1/paypage/{id}](https://docs.unzer.com/reference/api/#get-/v1/paypage/{id})
 and
-(https://docs.unzer.com/reference/api/#post-/v1/paypage/charge)[https://docs.unzer.com/reference/api/#post-/v1/paypage/charge]
+[https://docs.unzer.com/reference/api/#post-/v1/paypage/charge](https://docs.unzer.com/reference/api/#post-/v1/paypage/charge)
 
 ```js
-const {Unzer, Paypage} = require('../index');
+const {Unzer, Paypage} = require('unzer-node-simple');
 
 const unzer = new Unzer('<your-private-key-here>');
 const paypage = new Paypage(unzer);
@@ -80,7 +80,7 @@ type of resource like *customer*.
 
 The return value is always a Promise, that returns the decoded JSON data as plain old object after the call.
 The methods do not check the result for an Unzer error/success message. The only reason the methods throw an exception is an error
-with the underlaying (HTTPS request)[https://nodejs.org/api/https.html#httpsrequesturl-options-callback].
+with the underlaying [HTTPS request](https://nodejs.org/api/https.html#httpsrequesturl-options-callback).
 
 ## Generic usage
 
