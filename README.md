@@ -9,7 +9,7 @@ this package, when you run into trouble with the official one. You can use both 
 
 * No support by Unzer (and no support by me)
 
-* You need to be familiar with the [API reference](https://docs.unzer.com/reference/api/)
+* You need to be familiar with the [Unzer API reference](https://docs.unzer.com/reference/api/)
 
 * Functions do not validate/check data passed to them, you should know what you are doing.
 
@@ -39,7 +39,7 @@ const basket = new Baskets(unzer);
 const customer = new Customers(unzer);
 ```
 
-The function modules are named after the corresponding sections in the [API reference](https://docs.unzer.com/reference/api/)
+The function modules are named after the corresponding sections in the [Unzer API reference](https://docs.unzer.com/reference/api/)
 and/or URL routes. For example:
 
 - *Baskets* -> `https://https://api.unzer.com/v1/baskets`
@@ -74,7 +74,7 @@ const post_result = await paypage.charge(payload);
 ```
 
 The method names usually follow the HTTP method ( *post()*, *get()*, *put()*, *delete()* ), or references the
-relevant URL part ( *charge()*, *authorize()* ). Parameter names are usually the same as in the API reference.
+relevant URL part ( *charge()*, *authorize()* ). Parameter names are usually the same as in the Unzer API reference.
 If a method requires data for the HTTP body, that parameter is named *payload* (see example above) or named after the
 type of resource like *customer*.
 
