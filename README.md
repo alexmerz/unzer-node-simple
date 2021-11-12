@@ -89,7 +89,7 @@ Aside of the function modules you can always call any API route via the Unzer ob
 need only to pass the correct url path.
 
 ```js
-const {Unzer, Paypage} = require('../index');
+const {Unzer} = require('unzer-node-simple');
 
 const unzer = new Unzer('<your-private-key-here>');
 
