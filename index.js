@@ -11,6 +11,7 @@ const Customers = require('./libs/Customers');
 const Metadata = require('./libs/Metadata');
 const Paypage = require('./libs/Paypage');
 const Payments = require('./libs/Payments');
+const Recurring = require('./libs/Recurring');
 
 module.exports = {
     UnzerSimple,
@@ -19,5 +20,6 @@ module.exports = {
     Customers,
     Metadata,
     Paypage,
-    Payments
+    Payments,
+    Recurring
 };
