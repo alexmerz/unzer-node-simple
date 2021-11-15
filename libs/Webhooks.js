@@ -1,4 +1,4 @@
-const {Unzer} = require('../index');
+const {UnzerSimple} = require('./UnzerSimple');
 
 /**
  * Set/get webhooks
@@ -14,7 +14,7 @@ class Webhooks {
 
     /**
      * Init
-     * @param {Unzer} unzer Unzer main class
+     * @param {UnzerSimple} unzer Unzer main class
      */
     constructor(unzer) {
         this.#unzer = unzer;
@@ -88,7 +88,7 @@ class Webhooks {
             }
             rurl = url.retrieveUrl;
         }
-        rurl = rurl.replace(Unzer.BASE_URL+'/'+Unzer.API_VERSION, '');
+        rurl = rurl.replace(UnzerSimple.BASE_URL+'/'+UnzerSimple.API_VERSION, '');
         return this.#unzer.get(rurl);
     }
 
