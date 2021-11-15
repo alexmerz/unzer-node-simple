@@ -39,3 +39,5 @@ class Payments {
         return this.#unzer.get(url);
     }
 }
+
+module.exports = Payments;
