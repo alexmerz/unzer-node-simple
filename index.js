@@ -10,6 +10,7 @@ const Baskets = require('./libs/Baskets');
 const Customers = require('./libs/Customers');
 const Metadata = require('./libs/Metadata');
 const Paypage = require('./libs/Paypage');
+const Payments = require('./libs/Payments');
 
 module.exports = {
     UnzerSimple,
@@ -17,5 +18,6 @@ module.exports = {
     Baskets,
     Customers,
     Metadata,
-    Paypage
+    Paypage,
+    Payments
 };
