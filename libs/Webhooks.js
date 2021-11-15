@@ -1,4 +1,4 @@
-const {UnzerSimple} = require('./UnzerSimple');
+const UnzerSimple = require('./UnzerSimple');
 
 /**
  * Set/get webhooks
@@ -88,6 +88,7 @@ class Webhooks {
             }
             rurl = url.retrieveUrl;
         }
+
         rurl = rurl.replace(UnzerSimple.BASE_URL+'/'+UnzerSimple.API_VERSION, '');
         return this.#unzer.get(rurl);
     }
