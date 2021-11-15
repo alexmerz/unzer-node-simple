@@ -11,7 +11,7 @@ class Recurring {
 
     /**
      * Init
-     * @param {Unzer} unzer Unzer main class
+     * @param {UnzerSimple} unzer Unzer main class
      */
     constructor(unzer) {
         this.#unzer = unzer;
