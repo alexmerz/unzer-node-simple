@@ -87,6 +87,11 @@ with the underlaying [HTTPS request](https://nodejs.org/api/https.html#httpsrequ
 Somewhere at server start, register a webhook, if not already registered:
 
 ```js
+const {Unzer, Webhooks} = require('unzer-node-simple');
+
+const unzer = new Unzer('<your-private-key-here>')
+const webhooks = new Webhooks(unzer);
+
 const result = await webhooks.isRegistered("https://example.com/unzer/notify", "all")
 if(false === result) {
     await webhooks.post({url:"https://example.com/unzer/notify", event : "all"} );
