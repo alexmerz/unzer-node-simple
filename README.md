@@ -82,6 +82,39 @@ The return value is always a Promise, that returns the decoded JSON data as plai
 The methods do not check the result for an Unzer error/success message. The only reason the methods throw an exception is an error
 with the underlaying [HTTPS request](https://nodejs.org/api/https.html#httpsrequesturl-options-callback).
 
+## Webhook handling
+
+Somewhere at server start, register a webhook, if not already registered:
+
+```js
+const result = await webhooks.isRegistered("https://example.com/unzer/notify", "all")
+if(false === result) {
+    await webhooks.post({url:"https://example.com/unzer/notify", event : "all"} );
+}
+```
+
+Implement the webhook route and catch the message:
+
+```js
+app.post("/unzer/notify", async function(req, res) {
+    const message = JSON.parse(req.body);
+    const details = await webhooks.getRetrieveUrl(message); // looks for message.retrieveUrl
+
+    switch(message.event) {
+        case 'charge.succeeded':
+            enableNewSubscription(details);
+            sendReceipt(details);
+            break;
+        case 'charge.failed':
+            askForPaymentUpdate(details)
+            break;
+        case ...
+    }
+
+    res.status(200).end();
+});
+```
+
 ## Generic usage
 
 Aside of the function modules you can always call any API route via the Unzer object methods: ```get()```, ```post()```,
@@ -98,4 +131,3 @@ const result = unzer.post('/types/my_method_id/recurring',
                     {'x-some-custom-header':'My header value'},
                     true)
 ```
-
