@@ -7,14 +7,12 @@
  */
 class Payments {
 
-    #urlpath = '/payments';
-    #unzer = null;
-
     /**
      * Init
      * @param {UnzerSimple} unzer Unzer main class
      */
     constructor(unzer) {
+        this.#urlpath = '/payments';
         this.#unzer = unzer;
     }
 

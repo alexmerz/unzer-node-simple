@@ -10,11 +10,6 @@ const https = require('https');
  * @licence Apache Licence 2.0
  */
 class UnzerSimple {
-    static BASE_URL = 'https://api.unzer.com';
-    static API_VERSION = 'v1';
-
-    #privatekey = null;
-    #verbose = false;
 
     /**
      * Init
@@ -179,5 +174,7 @@ class UnzerSimple {
         return result;
     }
 }
+UnzerSimple.BASE_URL = 'https://api.unzer.com';
+UnzerSimple.API_VERSION = 'v1';
 
 module.exports = UnzerSimple;

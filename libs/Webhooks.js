@@ -9,14 +9,13 @@ const UnzerSimple = require('./UnzerSimple');
  * @licence Apache Licence 2.0
  */
 class Webhooks {
-    #urlpath = '/webhooks';
-    #unzer = null;
 
     /**
      * Init
      * @param {UnzerSimple} unzer Unzer main class
      */
     constructor(unzer) {
+        this.#urlpath = '/webhooks';
         this.#unzer = unzer;
     }
 

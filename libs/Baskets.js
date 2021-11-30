@@ -6,14 +6,13 @@
  * @licence Apache Licence 2.0
  */
 class Baskets {
-    #urlpath = '/baskets';
-    #unzer = null;
 
     /**
      * Init
      * @param {UnzerSimple} unzer Unzer main class
      */
     constructor(unzer) {
+        this.#urlpath = '/baskets';
         this.#unzer = unzer;
     }
 

@@ -5,15 +5,14 @@
  * @author Alexander Merz
  * @licence Apache Licence 2.0
  */
-class Customers {
-    #urlpath = '/customers';
-    #unzer = null;
+class Customers {    
 
     /**
      * Init
      * @param {UnzerSimple} unzer Unzer main class
      */
     constructor(unzer) {
+        this.#urlpath = '/customers';        
         this.#unzer = unzer;
     }
 

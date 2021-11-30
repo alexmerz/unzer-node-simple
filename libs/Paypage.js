@@ -6,14 +6,13 @@
  * @licence Apache Licence 2.0
  */
 class Paypage {
-    #urlpath = '/paypage';
-    #unzer = null;
 
     /**
      * Init
      * @param {UnzerSimple} unzer Unzer main class
      */
     constructor(unzer) {
+        this.#urlpath = '/paypage';        
         this.#unzer = unzer;
     }
 

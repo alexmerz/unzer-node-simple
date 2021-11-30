@@ -7,14 +7,13 @@
  */
 
 class Metadata {
-    #urlpath = '/metadata';
-    #unzer = null;
 
     /**
      * Init
      * @param {UnzerSimple} unzer Unzer main class
      */
     constructor(unzer) {
+        this.#urlpath = '/metadata';        
         this.#unzer = unzer;
     }
 

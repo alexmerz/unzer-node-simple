@@ -6,14 +6,13 @@
  * @licence Apache Licence 2.0
  */
 class Recurring {
-    #urlpath = '/types';
-    #unzer = null;
 
     /**
      * Init
      * @param {UnzerSimple} unzer Unzer main class
      */
     constructor(unzer) {
+        this.#urlpath = '/types';        
         this.#unzer = unzer;
     }
 
