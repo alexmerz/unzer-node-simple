@@ -23,7 +23,7 @@ class Customers {
      * @return {Promise<Object>} Unzer result
      */
     async delete(customerId) {
-        let url = this._urlpath + '/' + customerIdId;
+        let url = this._urlpath + '/' + customerId;
         return this._unzer.delete(url);
     }
 
@@ -34,7 +34,7 @@ class Customers {
      * @return {Promise<Object>} Unzer result
      */
     async get(customerId) {
-        let url = this._urlpath + '/' + customerIdId;
+        let url = this._urlpath + '/' + customerId;
         return this._unzer.get(url);
     }
 
