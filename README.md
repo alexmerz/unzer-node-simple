@@ -31,9 +31,9 @@ In general you set up a *Unzer* instance with your private sandbox or production
 then you pass that instance to one of the function modules:
 
 ```js
-const {Unzer, Baskets, Customers} = require('unzer-node-simple');
+const {UnzerSimple, Baskets, Customers} = require('unzer-node-simple');
 
-const unzer = new Unzer('<your-private-key-here>');
+const unzer = new UnzerSimple('<your-private-key-here>');
 
 const basket = new Baskets(unzer);
 const customer = new Customers(unzer);
@@ -54,7 +54,7 @@ and
 ```js
 const {Unzer, Paypage} = require('unzer-node-simple');
 
-const unzer = new Unzer('<your-private-key-here>');
+const unzer = new UnzerSimple('<your-private-key-here>');
 const paypage = new Paypage(unzer);
 
 const get_result = await paypage.get('paypage_id');
@@ -87,6 +87,11 @@ with the underlaying [HTTPS request](https://nodejs.org/api/https.html#httpsrequ
 Somewhere at server start, register a webhook, if not already registered:
 
 ```js
+const {UnzerSimple, Webhooks} = require('unzer-node-simple');
+
+const unzer = new UnzerSimple('<your-private-key-here>')
+const webhooks = new Webhooks(unzer);
+
 const result = await webhooks.isRegistered("https://example.com/unzer/notify", "all")
 if(false === result) {
     await webhooks.post({url:"https://example.com/unzer/notify", event : "all"} );
@@ -122,9 +127,9 @@ Aside of the function modules you can always call any API route via the Unzer ob
 need only to pass the correct url path.
 
 ```js
-const {Unzer} = require('unzer-node-simple');
+const {UnzerSimple} = require('unzer-node-simple');
 
-const unzer = new Unzer('<your-private-key-here>');
+const unzer = new UnzerSimple('<your-private-key-here>');
 
 const result = unzer.post('/types/my_method_id/recurring',
                     {some_body_data_1:..., other_body_data:....},
