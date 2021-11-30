@@ -12,8 +12,8 @@ class Payments {
      * @param {UnzerSimple} unzer Unzer main class
      */
     constructor(unzer) {
-        this.#urlpath = '/payments';
-        this.#unzer = unzer;
+        this._urlpath = '/payments';
+        this._unzer = unzer;
     }
 
     /**
@@ -23,7 +23,7 @@ class Payments {
      * @return {Promise<Object>}    Result of charge
      */
     async postCharges(payload) {
-        return this.#unzer.post(this.#urlpath+'/charges', payload, {}, true);
+        return this._unzer.post(this._urlpath+'/charges', payload, {}, true);
     }
 
     /**
@@ -33,8 +33,8 @@ class Payments {
      * @return {Promise<Object>}    Result of request
      */
     async getCharges(anyId) {
-        let url = this.#urlpath + '/charges/' + anyId;
-        return this.#unzer.get(url);
+        let url = this._urlpath + '/charges/' + anyId;
+        return this._unzer.get(url);
     }
 }
 

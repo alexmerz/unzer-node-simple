@@ -12,8 +12,8 @@ class Baskets {
      * @param {UnzerSimple} unzer Unzer main class
      */
     constructor(unzer) {
-        this.#urlpath = '/baskets';
-        this.#unzer = unzer;
+        this._urlpath = '/baskets';
+        this._unzer = unzer;
     }
 
     /**
@@ -23,8 +23,8 @@ class Baskets {
      * @return {Promise<Object>}    basket data
      */
     async get(basketId) {
-        let url = this.#urlpath + '/' + basketId;
-        return this.#unzer.get(url);
+        let url = this._urlpath + '/' + basketId;
+        return this._unzer.get(url);
     }
 
     /**
@@ -34,7 +34,7 @@ class Baskets {
      * @return {Promise<Object>}    basket resource
      */
     async post(basket) {
-        return this.#unzer.post(this.#urlpath, basket, {}, true);
+        return this._unzer.post(this._urlpath, basket, {}, true);
     }
 
     /**
@@ -45,7 +45,7 @@ class Baskets {
      * @return {Promise<Object>}    basket resource
      */
     async put(basketId, basket) {
-        return this.#unzer.put(this.#urlpath+'/'+basketId, basket, {}, true);
+        return this._unzer.put(this._urlpath+'/'+basketId, basket, {}, true);
     }
 }
 

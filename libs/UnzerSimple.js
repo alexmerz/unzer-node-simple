@@ -18,8 +18,8 @@ class UnzerSimple {
      * @param {boolean} verbose     enable log output to console
      */
     constructor(privatekey, verbose = false) {
-        this.#privatekey = privatekey;
-        this.#verbose = verbose;
+        this._privatekey = privatekey;
+        this._verbose = verbose;
     }
 
     /**
@@ -44,7 +44,7 @@ class UnzerSimple {
                 sparams = JSON.stringify(params);
             }
         }
-        return UnzerSimple.request(this.#privatekey, urlpath, 'PUT', sparams, headers, this.#verbose);
+        return UnzerSimple.request(this._privatekey, urlpath, 'PUT', sparams, headers, this._verbose);
     }
 
     /**
@@ -55,7 +55,7 @@ class UnzerSimple {
      * @returns {Promise<object>}    resolves to an plain object with the UnzerSimple responze
      */
     async delete(urlpath, headers = {}) {
-        return UnzerSimple.request(this.#privatekey, urlpath, 'DELETE', '', headers, this.#verbose);
+        return UnzerSimple.request(this._privatekey, urlpath, 'DELETE', '', headers, this._verbose);
     }
 
     /**
@@ -66,7 +66,7 @@ class UnzerSimple {
      * @returns {Promise<object>}    resolves to an plain object with the UnzerSimple responze
      */
     async get(urlpath, headers = {}) {
-        return UnzerSimple.request(this.#privatekey, urlpath, 'GET', '', headers, this.#verbose);
+        return UnzerSimple.request(this._privatekey, urlpath, 'GET', '', headers, this._verbose);
     }
 
     /**
@@ -91,7 +91,7 @@ class UnzerSimple {
                 sparams = JSON.stringify(params);
             }
         }
-        return UnzerSimple.request(this.#privatekey, urlpath, 'POST', sparams, headers, this.#verbose);
+        return UnzerSimple.request(this._privatekey, urlpath, 'POST', sparams, headers, this._verbose);
     }
 
     /**
