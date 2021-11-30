@@ -13,8 +13,8 @@ class Metadata {
      * @param {UnzerSimple} unzer Unzer main class
      */
     constructor(unzer) {
-        this.#urlpath = '/metadata';        
-        this.#unzer = unzer;
+        this._urlpath = '/metadata';        
+        this._unzer = unzer;
     }
 
     /**
@@ -24,8 +24,8 @@ class Metadata {
      * @return {Promise<Object>}    metadata
      */
     async get(metadataId) {
-        let url = this.#urlpath + '/' + metadataId;
-        return this.#unzer.get(url);
+        let url = this._urlpath + '/' + metadataId;
+        return this._unzer.get(url);
     }
 
     /**
@@ -35,7 +35,7 @@ class Metadata {
      * @return {Promise<Object>} metadata resource
      */
     async post(metadata) {
-        return this.#unzer.post(this.#urlpath, metadata);
+        return this._unzer.post(this._urlpath, metadata);
     }
 
     /**
@@ -46,7 +46,7 @@ class Metadata {
      * @return {Promise<Object>}    metadata resource
      */
     async put(metadataId, metadata) {
-        return this.#unzer.put(this.#urlpath+'/'+metaId, metadata);
+        return this._unzer.put(this._urlpath+'/'+metaId, metadata);
     }
 }
 

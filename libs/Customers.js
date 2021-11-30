@@ -12,8 +12,8 @@ class Customers {
      * @param {UnzerSimple} unzer Unzer main class
      */
     constructor(unzer) {
-        this.#urlpath = '/customers';        
-        this.#unzer = unzer;
+        this._urlpath = '/customers';        
+        this._unzer = unzer;
     }
 
     /**
@@ -23,8 +23,8 @@ class Customers {
      * @return {Promise<Object>} Unzer result
      */
     async delete(customerId) {
-        let url = this.#urlpath + '/' + customerIdId;
-        return this.#unzer.delete(url);
+        let url = this._urlpath + '/' + customerIdId;
+        return this._unzer.delete(url);
     }
 
     /**
@@ -34,8 +34,8 @@ class Customers {
      * @return {Promise<Object>} Unzer result
      */
     async get(customerId) {
-        let url = this.#urlpath + '/' + customerIdId;
-        return this.#unzer.get(url);
+        let url = this._urlpath + '/' + customerIdId;
+        return this._unzer.get(url);
     }
 
     /**
@@ -45,7 +45,7 @@ class Customers {
      * @return {Promise<Object>} Unzer result
      */
     async post(customer) {
-        return this.#unzer.post(this.#urlpath, customer, {}, true);
+        return this._unzer.post(this._urlpath, customer, {}, true);
     }
 
     /**
@@ -56,7 +56,7 @@ class Customers {
      * @return {Promise<Object>} Unzer result
      */
     async put(customerId, customer) {
-        return this.#unzer.put(this.#urlpath+'/'+customerId, customer, {}, true);
+        return this._unzer.put(this._urlpath+'/'+customerId, customer, {}, true);
     }
 }
 

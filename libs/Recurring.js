@@ -12,8 +12,8 @@ class Recurring {
      * @param {UnzerSimple} unzer Unzer main class
      */
     constructor(unzer) {
-        this.#urlpath = '/types';        
-        this.#unzer = unzer;
+        this._urlpath = '/types';        
+        this._unzer = unzer;
     }
 
     /**
@@ -24,8 +24,8 @@ class Recurring {
      * @return {Promise<Object>} Unzer response
      */
     async get(methodId) {
-        let url = this.#urlpath + '/' + methodId + '/recurring';
-        return this.#unzer.get(url);
+        let url = this._urlpath + '/' + methodId + '/recurring';
+        return this._unzer.get(url);
     }
 
     /**
@@ -35,8 +35,8 @@ class Recurring {
      * @return {Promise<Object>}
      */
     async postUuid(uuid) {
-        let url = this.#urlpath + '/recurring';
-        return this.#unzer.post(url, {uuid: uuid});
+        let url = this._urlpath + '/recurring';
+        return this._unzer.post(url, {uuid: uuid});
     }
 
     /**
@@ -47,8 +47,8 @@ class Recurring {
      * @return {Promise<Object>}
      */
     async postMethodId(methodId, payload) {
-        let url = this.#urlpath + '/' + methodId + '/recurring';
-        return this.#unzer.post(url, payload, {}, true);
+        let url = this._urlpath + '/' + methodId + '/recurring';
+        return this._unzer.post(url, payload, {}, true);
     }
 
 }

@@ -12,8 +12,8 @@ class Paypage {
      * @param {UnzerSimple} unzer Unzer main class
      */
     constructor(unzer) {
-        this.#urlpath = '/paypage';        
-        this.#unzer = unzer;
+        this._urlpath = '/paypage';        
+        this._unzer = unzer;
     }
 
     /**
@@ -23,8 +23,8 @@ class Paypage {
      * @return {Promise<Object>}    paypage resource
      */
     async get(paypageId) {
-        const url = this.#urlpath + '/' + paypageId;
-        return this.#unzer.get(url);
+        const url = this._urlpath + '/' + paypageId;
+        return this._unzer.get(url);
     }
 
     /**
@@ -34,8 +34,8 @@ class Paypage {
      * @return {Promise<Object>}
      */
     async authorize(payload) {
-        const url = this.#urlpath + '/authorize'
-        return this.#unzer.post(url, payload, {}, true);
+        const url = this._urlpath + '/authorize'
+        return this._unzer.post(url, payload, {}, true);
     }
 
     /**
@@ -45,8 +45,8 @@ class Paypage {
      * @return {Promise<Object>}
      */
     async charge(payload) {
-        const url = this.#urlpath + '/charge'
-        return this.#unzer.post(url, payload, {}, true);
+        const url = this._urlpath + '/charge'
+        return this._unzer.post(url, payload, {}, true);
     }
 }
 

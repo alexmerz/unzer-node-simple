@@ -15,8 +15,8 @@ class Webhooks {
      * @param {UnzerSimple} unzer Unzer main class
      */
     constructor(unzer) {
-        this.#urlpath = '/webhooks';
-        this.#unzer = unzer;
+        this._urlpath = '/webhooks';
+        this._unzer = unzer;
     }
 
     /**
@@ -26,11 +26,11 @@ class Webhooks {
      * @return {Promise<Object>}    Unzer response
      */
     async delete(eventId = null) {
-        let url = this.#urlpath;
+        let url = this._urlpath;
         if(eventId != null) {
             url = url + '/' + eventId;
         }
-        return this.#unzer.delete(url);
+        return this._unzer.delete(url);
     }
 
     /**
@@ -40,11 +40,11 @@ class Webhooks {
      * @return {Promise<Object>}    webhook data
      */
     async get(eventId = null) {
-        let url = this.#urlpath;
+        let url = this._urlpath;
         if(eventId != null) {
             url = url + '/' + eventId;
         }
-        return this.#unzer.get(url);
+        return this._unzer.get(url);
     }
 
     /**
@@ -54,7 +54,7 @@ class Webhooks {
      * @return {Promise<Object>}    Unzer response
      */
     async post(webhook) {
-        return this.#unzer.post(this.#urlpath, webhook);
+        return this._unzer.post(this._urlpath, webhook);
     }
 
     /**
@@ -65,7 +65,7 @@ class Webhooks {
     * @return {Promise<Object>}     Unzer response
      */
     async put(eventId, webhook) {
-        return this.#unzer.put(this.#urlpath+'/'+eventId, webhook);
+        return this._unzer.put(this._urlpath+'/'+eventId, webhook);
     }
 
     /**
@@ -88,7 +88,7 @@ class Webhooks {
             rurl = url.retrieveUrl;
         }
         rurl = rurl.replace(UnzerSimple.BASE_URL+'/'+UnzerSimple.API_VERSION, '');
-        return this.#unzer.get(rurl);
+        return this._unzer.get(rurl);
     }
 
     /**

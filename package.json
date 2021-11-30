@@ -1,6 +1,6 @@
 {
   "name": "unzer-node-simple",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Thin, incomplete wrapper around the Unzer payment API for Node.js.",
   "main": "index.js",
   "author": "Alexander Merz",
