@@ -31,11 +31,24 @@ class Payments {
      * @link https://docs.unzer.com/reference/api/#get-/v1/payments/charges/{anyid}
      * @param {string} anyId        identifier of charge
      * @return {Promise<Object>}    Result of request
+     * @see getPaymentIdCharges
      */
     async getCharges(anyId) {
         let url = this._urlpath + '/charges/' + anyId;
         return this._unzer.get(url);
     }
+
+    /**
+     * Fetch the first found charged transaction.
+     * @link https://docs.unzer.com/reference/api/#get-/v1/payments/{codeororderid}/charges
+     * @param {string} codeOrOrderId    payment identity
+     * @return {Promise<Object>}        Result of request
+     * @see getCharges
+     */
+     async getPaymentIdCharges(codeOrOrderId) {
+        let url = this._urlpath + '/' + codeOrOrderId +'/charges/';
+        return this._unzer.get(url);
+    }    
 }
 
 module.exports = Payments;
