@@ -44,6 +44,7 @@ class Payments {
      * @param {string} codeOrOrderId    payment identity
      * @return {Promise<Object>}        Result of request
      * @see getCharges
+     * @since 1.1.0
      */
      async getPaymentIdCharges(codeOrOrderId) {
         let url = this._urlpath + '/' + codeOrOrderId +'/charges/';
