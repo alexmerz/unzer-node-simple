@@ -32,7 +32,7 @@ class UnzerSimple {
      * @returns {Promise<object>}    resolves to an plain object with the UnzerSimple responze
      */
     async put(urlpath, params, headers = {}, useJson = false) {
-        headers['Content-Type'] = 'application/json';
+        headers['Content-Type'] = 'application/x-www-form-urlencoded';
         if(useJson) {
             headers['Content-Type'] = 'application/json';
         }

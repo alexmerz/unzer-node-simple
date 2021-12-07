@@ -65,7 +65,7 @@ class Webhooks {
     * @return {Promise<Object>}     Unzer response
      */
     async put(eventId, webhook) {
-        return this._unzer.put(this._urlpath+'/'+eventId, webhook);
+        return this._unzer.put(this._urlpath+'/'+eventId, webhook, {}, true);
     }
 
     /**
