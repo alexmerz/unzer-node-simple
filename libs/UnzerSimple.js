@@ -131,7 +131,7 @@ class UnzerSimple {
             if(body != '') {
                 if(typeof body !== 'string') {
                     sbody = JSON.stringify(body);
-                }
+                }                
             }
             if(verbose) {
                 console.log(sbody);
