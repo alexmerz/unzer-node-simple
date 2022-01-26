@@ -131,8 +131,7 @@ class UnzerSimple {
             if(body != '') {
                 if(typeof body !== 'string') {
                     sbody = JSON.stringify(body);
-                }
-                headers['Content-Length'] = sbody.length;
+                }                
             }
             if(verbose) {
                 console.log(sbody);
